@@ -176,6 +176,7 @@
                     <tr>
                         <td> </td>
                         <td> </td>
+                         <td><a href="upAdmin.jsp"><i class='bx bxs-edit'></i></a></td>
                         <td><a href="#" onclick=""><i class='bx bxs-trash'></i></a></td>
                     </tr>
                     
