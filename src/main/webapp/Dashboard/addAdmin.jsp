@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Moon house restaurant</title>
+	<title>Movie Hub</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
@@ -113,8 +113,8 @@
 	    <div class="shape"></div>
 	    <div class="shape"></div>
 	</div>
-	<form action="../../Backend/addadminhandler.php" method="post" onsubmit="return errorChecker()">
-	    <h3>Add admin</h3>
+	<form action="../AddAdServlet" method="post" onsubmit="return errorChecker()">
+	    <h3>Admin Details</h3>
 	
 	    <label for="username">Username</label>
 	    <input type="text" name="name" placeholder="Name" id="username">
@@ -128,7 +128,7 @@
 	    <label for="con-password">Confirm password</label>
 	    <input type="password" placeholder="Re-enter password" id="con-password">
 	    <div id="showErr"></div>
-	    <button type="submit">Add</button>
+	    <button type="submit">Submit</button>
 	</form>
 	<script>
 	    var errormsg = document.getElementById("showErr");
@@ -149,7 +149,7 @@
 	            return false;
 	        }
 	
-	        let email = document.getElementById("email").value;
+	        /*let email = document.getElementById("email").value;
 	        let parts = email.split('@');
 	        if (parts.length === 2) {
 	            if (parts[1] !== "moon.com") {
@@ -157,11 +157,11 @@
 	                errormsg.style.display = "block";
 	                return false;
 	            }
-	        }
+	        }*/
 	        return true;
 	    }
 	
-	    checkRed();
+	   /* checkRed();
 	
 	
 	
@@ -188,7 +188,7 @@
 	
 	            }
 	        }
-	    }
+	    }*/
 	</script>
 </body>
 </html>
