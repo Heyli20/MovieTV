@@ -18,7 +18,7 @@ public class AdminDBUtil {
 			stmt=con.createStatement();
 			
 			//query 
-			String sql="INSERT INTO admin values (0,'"+name+"','"+email+"','"+pwd+"', 'admin')";
+			String sql="INSERT INTO userss (name, email, password, role) values ('"+name+"','"+email+"','"+pwd+"', 'admin')";
 			
 			//inserting data
 			int res=stmt.executeUpdate(sql);
@@ -43,15 +43,17 @@ public class AdminDBUtil {
 			con = DBCon.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "Select * from admin where role like 'admin'";
+			String sql = "Select * from userss where role like 'admin'";
 			
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				String un = rs.getString(2);
-				String email=rs.getString(3);
+				String email = rs.getString(3);
+				String psw = rs.getString(4);
+				String role = rs.getString(5);
 				
-				Admin ad = new Admin(un,email);
+				Admin ad = new Admin(un,email,psw,role);
 				
 				admin.add(ad);
 			}
