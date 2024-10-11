@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ include file="/Header/adminHeader.jsp" %>
+    <%@ include file="../Header/adminHeader.jsp" %>
+  
      
      
      
-     
-    
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="Dashboard/Dashboard.css">
     <link rel="stylesheet" href="Dashboard.css">
     
     <style>
@@ -173,12 +172,27 @@
                     </thead>
                     <tbody>
                    
+                   <c:forEach var="admin" items="${adDetails}">
+                   
+                   <c:set var="name" value="${admin.Uname}" />
+                   <c:set var="email" value="${admin.Email}"/>
+                   <c:set var="psw" value="${admin.Pass}"/>
+                   
                     <tr>
-                        <td> </td>
-                        <td> </td>
-                         <td><a href="upAdmin.jsp"><i class='bx bxs-edit'></i></a></td>
+                        <td>${admin.uname}</td>
+                        <td>${admin.email}</td>
+                        
+                        <c:url value="upAdmin.jsp" var="adUp">
+                        	<c:param name="name" value="${Uname}"/>
+                        	<c:param name="email" value="${Email}"/>
+                        	<c:param name="psw" value="${Pass}"/>	
+                        </c:url>
+              
+                        <td><a href="${adUp}"><i class='bx bxs-edit'></i></a></td>
                         <td><a href="#" onclick=""><i class='bx bxs-trash'></i></a></td>
                     </tr>
+                    
+                    </c:forEach>
                     
                     </tbody>
                 </table>
