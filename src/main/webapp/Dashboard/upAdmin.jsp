@@ -113,20 +113,27 @@
 	    <div class="shape"></div>
 	    <div class="shape"></div>
 	</div>
+	
+	<%
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String psw = request.getParameter("psw");
+	%>
+	
 	<form action="../UpdateAdServlet" method="post" onsubmit="return errorChecker()">
 	    <h3>Admin Details</h3>
 	
 	    <label for="username">Username</label>
-	    <input type="text" name="name" value="" placeholder="Name" id="username">
+	    <input type="text" name="name" value="<%= name %>" placeholder="Name" id="username">
 	
 	    <label for="email">Email</label>
-	    <input type="email" name="email" value="" placeholder="Email" id="email">
+	    <input type="email" name="email" value="<%= email %>" placeholder="Email" id="email">
 	
 	    <label for="password">Password</label>
-	    <input type="password" name="pass" value="" placeholder="Password" id="password">
+	    <input type="password" name="pass" value="<%= psw %>" placeholder="Password" id="password">
 	
 	    <label for="con-password">Confirm password</label>
-	    <input type="password" value=""  placeholder="Re-enter password" id="con-password">
+	    <input type="password" placeholder="Re-enter password" id="con-password">
 	    <div id="showErr"></div>
 	    <button type="submit">Submit Changes</button>
 	</form>
