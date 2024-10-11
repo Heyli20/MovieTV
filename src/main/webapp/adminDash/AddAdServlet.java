@@ -19,11 +19,11 @@ public class AddAdServlet extends HttpServlet {
 		boolean isTrue = AdminDBUtil.insertAdmin(un, email, password);
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("adminDash.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("Dashboard/adminDash.jsp");
 			dis.forward(request,response);
 		}
 		else {
-			RequestDispatcher dis=request.getRequestDispatcher("addAdmin.jsp");
+			RequestDispatcher dis=request.getRequestDispatcher("Dashboard/addAdmin.jsp");
 			dis.forward(request, response);
 		}
 	}
