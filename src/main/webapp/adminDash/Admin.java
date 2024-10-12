@@ -1,27 +1,36 @@
-package adminDash;
+package Admin_Auth;
 
-public class Admin {
-	private String uname;
-	private String email;
-	private String pass;
-	private String role;
+import User.*;
+
+public class Admin extends User{
+	private String adLev;
+	private String per;
 	
-	public Admin(String uname, String email, String pass, String role) {
-		this.uname = uname;
-		this.email = email;
-		this.pass = pass;
-		this.role = "admin";
+	public Admin(String uname, String email, String pass, String role, String adLev, String per) {
+		super(uname, email, pass, role);
+		this.adLev = adLev;
+		this.per = per;
+	}
+	
+	public Admin(String uname,String email) {
+		super( uname,email);
 	}
 
-	public String getUname() {
-		return uname;
+	public String getAdLev() {
+		return adLev;
 	}
 
-	public String getEmail() {
-		return email;
+	public void setAdLev(String adLev) {
+		this.adLev = adLev;
 	}
 
-	public String getPass() {
-		return pass;
+	public String getPer() {
+		return per;
 	}
+
+	public void setPer(String per) {
+		this.per = per;
+	}
+	
+	
 }
